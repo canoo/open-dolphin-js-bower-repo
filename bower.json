@@ -1,6 +1,6 @@
 {
     "name": "open-dolphin-js",
-    "version": "0.0.2",
+    "version": "1.0-RC2B3",
     "main": "dist/opendolphin.js",
     "ignore": [
         "readme.adoc"
