@@ -1,4 +1,4 @@
-This is the _artifact repository_ for bower containing the Javascript client of http://http://www.open-dolphin.org[OpenDolphin]
+This is the _ bower artifact repository_ for the Javascript client of http://http://www.open-dolphin.org[OpenDolphin]
 
 = Usage
 
@@ -58,13 +58,17 @@ Users of this bower module can ignore this section which is intended for the mai
 [NOTE]
 Needs to be done only once or in the unlikely case someone messes up the registration.
 
-* register opendolphin.js as bower component :
-**`bower register open-dolphin-js git://github.com/canoo/open-dolphin-js-bower-repo.git`
+* register opendolphin.js as bower component
+** `bower register open-dolphin-js git://github.com/canoo/open-dolphin-js-bower-repo.git`
 ** check: `bower info open-dolphin-js`
 
-= Make a new release
+== Make a new release
 
-* change version in `bower.json`
-* git tag -a "1.0-RC2B3" -m "version 1.0-RC2B3"
+Say you would like to make a new version 1.0-RC2B4.
+The you need to do the following:
+
+* change version in `bower.json` to 1.0-RC2B4
+* commit and push
+* git tag -a "1.0-RC2B4" -m "version 1.0-RC2B4"
 * git push --tags
 
