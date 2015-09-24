@@ -1,0 +1,68 @@
+This is the _artifact repository_ for bower containing the Javascript client of http://http://www.open-dolphin.org[OpenDolphin]
+
+= Usage
+
+For playground projects invoke `bower install open-dolphin-js`.
+Otherwise we recommend to use a `bower.json` file for the configuration of this dependency.
+Here is a minimal example:
+
+.bower.json
+[source,javascript]
+----
+{
+    "name":  "myclientapp",
+    "version": "0.0.1",
+    "dependencies": {
+        "open-dolphin-js": "1.0-RC2B3"
+    }
+}
+----
+
+Then invoke `bower install`
+
+Both install commands will produce a new folder `bower_components` with a subfolder `open-dolphin-js`.
+In your html file you can use it like this:
+
+[source,html]
+----
+<script type="text/javascript" src="bower_components/open-dolphin-js/dist/opendolphin.js"></script>
+...
+
+var dolphin = opendolphin.makeDolphin().url(odConfig.DOLPHIN_URL).reset(true).supportCORS(true).build();
+----
+
+Also make sure that you enable the CORS support when you initialize dolphin as shown in the example.
+This is necessary since when you work with bower you most likely
+either load your html and `opendolphin.js` from the local filesystem during development
+or from a different webapplication (containing just the client) than your server webapp.
+
+= Additional Remarks
+
+My (Sven Ehrke) preferred way to use `opendolphin.js` is by using it's webjar version and not through bower.
+That way you can integrate it into your maven or gradle build system which you probably have anyway on the
+server side.
+But there might be situations for which it is better to work with the bower module.
+The ones which I can currently think of are:
+
+* Client and Server teams are separated from each other and it is not possible to get `opendolphin.js` from the server.
+* The Client Team's build system is based upon javascript tools and the team prefers to use this toolchain to get access to `opendolphin.js`
+
+= Information for Maintainers
+
+Users of this bower module can ignore this section which is intended for the maintainers of this bower module.
+
+== Initial registration
+
+[NOTE]
+Needs to be done only once or in the unlikely case someone messes up the registration.
+
+* register opendolphin.js as bower component :
+**`bower register open-dolphin-js git://github.com/canoo/open-dolphin-js-bower-repo.git`
+** check: `bower info open-dolphin-js`
+
+= Make a new release
+
+* change version in `bower.json`
+* git tag -a "1.0-RC2B3" -m "version 1.0-RC2B3"
+* git push --tags
+
