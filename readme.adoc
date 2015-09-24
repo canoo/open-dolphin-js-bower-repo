@@ -47,6 +47,8 @@ The ones which I can currently think of are:
 * Client and Server teams are separated from each other and it is not possible to get `opendolphin.js` from the server.
 * The Client Team's build system is based upon javascript tools and the team prefers to use this toolchain to get access to `opendolphin.js`
 
+You can find a complete example of a client using this bower module here: https://github.com/svene/open-dolphin-examples/tree/master/od_jsclient_bower
+
 = Information for Maintainers
 
 Users of this bower module can ignore this section which is intended for the maintainers of this bower module.
